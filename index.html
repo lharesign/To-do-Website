@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="dataStructureScript.js" defer></script>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Stack</title>
+</head>
+
+<body>
+    <header class="header">
+        <h2 class="page-title">To-do List</h2>
+    </header>
+
+    <div class="page-content">
+        <div class="info">
+            <p class="info-paragraph">This is a to do list. Add new items via the input field and remove items using
+                the
+                appropriate buttons. The list will automatically update each time you add/remove items. The list can
+                even be saved in local storage to allow you to save the list when before closing the website and load
+                again upon return.
+            </p>
+        </div>
+        <div class="user-interface">
+            <div class="input">
+                <input type="text" id="add-to-todo" placeholder="Add new to do items here...">
+                <button id="add-btn" onclick="addVariable()">Add</button>
+                <input type="text" id="remove-from-todo" placeholder="What would you like to remove?">
+                <button id="remove-specific-btn" onclick="removeSpecific()">Remove</button>
+                <div class="three-buttons">
+                    <button id="remove-first-btn" onclick="removeFirst()">Remove First Item</button>
+                    <button id="remove-last-btn" onclick="removeLast()">Remove Last Item</button>
+                    <button id="clear-btn" onclick="clearList()">Clear List</button>
+                </div>
+                <div class="two-buttons">
+                    <button id="save-btn" onclick="saveList()">Save List</button>
+                    <button id="print-btn" onclick="loadList()">Load Saved List</button>
+                </div>
+            </div>
+            <div class="output">
+                <ol id="output-list"></ol>
+            </div>
+        </div>
+    </div>
+    <footer id="footer">
+        <div class="column">
+            <h4 class="footer-title">Connect with me</h4>
+            <!-- Add font awesome icons -->
+            <table class="fa-icons">
+                <tr>
+                    <td><a href="https://www.linkedin.com/in/lukeharesign/" class="fa fa-linkedin"></a></td>
+                    <td><a href="https://github.com/lharesign" class="fa fa-github"></a></td>
+                    <td><a href="https://www.instagram.com/lukeharesign/" class="fa fa-instagram"></a></td>
+                </tr>
+            </table>
+        </div>
+        <div class="column">
+            <p class="footer-paragraph">This to-do list was created by Luke Haresign, September 2020.</p>
+        </div>
+    </footer>
+</body>
+
+</html>
