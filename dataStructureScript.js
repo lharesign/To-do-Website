@@ -62,14 +62,9 @@ function printStack(stack) {
 
 var myStack = new Stack([]);
 var retrieved = localStorage.getItem("bufferArray");
-
-//if (!retrieved.length == 0) {
-   // var bufferArray = retrieved;
-//} else {
    
     var bufferArray = myStack.getBuffer();
     var bufferStack = new Stack(bufferArray);
-//}
 
 
 
@@ -77,6 +72,7 @@ function addVariable() {
     var toAdd = document.getElementById("add-to-todo").value;
     bufferStack.push(toAdd);
     printStack(bufferArray);
+    document.getElementById("add-to-todo").value = "";
 }
 
 //Function to remove last item for stack, if stack empty return alert
@@ -114,8 +110,9 @@ function removeSpecific() {
 
         for (let i = 0; i < bufferArray.length; i++) {
             if (bufferArray[i].toUpperCase() == toRemove.toUpperCase()) {
-                var splicedItem = bufferStack.splice(i, 1);
+                bufferStack.splice(i, 1);
                 printStack(bufferArray);
+                document.getElementById("remove-from-todo").value = "";
                 return;
             }
         }
