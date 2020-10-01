@@ -62,11 +62,30 @@ function printStack(stack) {
 
 var myStack = new Stack([]);
 var retrieved = localStorage.getItem("bufferArray");
-   
-    var bufferArray = myStack.getBuffer();
-    var bufferStack = new Stack(bufferArray);
+
+var bufferArray = myStack.getBuffer();
+var bufferStack = new Stack(bufferArray);
+
+//Listens for enter being pressed, fires relevant button when pressed
+var addInput = document.getElementById("add-to-todo");
+var removeInput = document.getElementById("remove-from-todo");
+
+addInput.addEventListener("keyup", function(event) {
+    if (event.key === "Enter") {
+        console.log("ENTER");
+        document.getElementById("add-btn").click();
+    }
+});
+
+removeInput.addEventListener("keyup", function(event) {
+    if (event.key === "Enter") {
+        console.log("ENTER");
+        document.getElementById("remove-specific-btn").click();
+    }
+});
 
 
+//Funciton for adding input to stack
 
 function addVariable() {
     var toAdd = document.getElementById("add-to-todo").value;
@@ -132,12 +151,14 @@ function clearList() {
     }
 }
 
-function saveList () {
+//Function to save stack in local storage so it remains after session ends
+function saveList() {
     var jsonArray = JSON.stringify(bufferArray);
     localStorage.setItem("bufferArray", jsonArray);
 }
 
-function loadList () {
+//Function for retrieving stack from local storage
+function loadList() {
     var retrieved = JSON.parse(localStorage.getItem("bufferArray"));
     for (var i = 0; i < retrieved.length; i++) {
         var listItem = retrieved[i];
